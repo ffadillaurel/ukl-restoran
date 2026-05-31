@@ -3,3 +3,6 @@ node_modules/
 .DS_Store
 uploads
 generated
+prisma.config.js
+prisma.config.js.map
+prisma.config.d.ts
