@@ -1,18 +1,34 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { NestExpressApplication } from '@nestjs/platform-express';
-import { ValidationPipe } from '@nestjs/common'; // tambah ini
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { ValidationPipe } from '@nestjs/common';
 import { join } from 'path';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  app.useGlobalPipes(new ValidationPipe({ transform: true })); // tambah ini
+  app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
+  // Static files untuk upload gambar menu
   app.useStaticAssets(join(__dirname, '..', 'uploads'), {
     prefix: '/uploads',
   });
 
-  await app.listen(3000);
+  // Swagger
+  const config = new DocumentBuilder()
+    .setTitle('UKL Restoran API')
+    .setDescription('Backend API Sistem POS Restoran')
+    .setVersion('1.0')
+    .addBearerAuth()
+    .build();
+
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api-docs', app, document);
+
+  const port = process.env.PORT || 3000;
+  await app.listen(port);
+  console.log(`Server running on port ${port}`);
+  console.log(`Swagger docs: http://localhost:${port}/api-docs`);
 }
 bootstrap();
