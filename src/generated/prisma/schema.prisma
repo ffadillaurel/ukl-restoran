@@ -1,4 +1,3 @@
-
 generator client {
   provider      = "prisma-client-js"
   output        = "../generated/prisma"
@@ -11,11 +10,11 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  username  String   @unique
-  email     String   @unique
-  password  String
-  role      UserRole
+  id       Int      @id @default(autoincrement())
+  username String   @unique
+  email    String   @unique
+  password String
+  role     UserRole
 
   transactions Transaction[]
   reservations Reservation[]
@@ -30,8 +29,8 @@ enum UserRole {
 }
 
 model Category {
-  id    Int    @id @default(autoincrement())
-  name  String @unique
+  id   Int    @id @default(autoincrement())
+  name String @unique
 
   menus Menu[]
 
@@ -40,7 +39,7 @@ model Category {
 }
 
 model Menu {
-  id          Int      @id @default(autoincrement())
+  id          Int     @id @default(autoincrement())
   name        String
   description String?
   price       Int
@@ -59,13 +58,13 @@ model Menu {
 }
 
 model Reservation {
-  id               Int               @id @default(autoincrement())
-  customerName     String
-  phoneNumber      String
-  reservationDate  DateTime
-  totalGuest       Int
-  tableNumber      Int
-  status           ReservationStatus @default(PENDING)
+  id              Int               @id @default(autoincrement())
+  customerName    String
+  phoneNumber     String
+  reservationDate DateTime
+  totalGuest      Int
+  tableNumber     Int
+  status          ReservationStatus @default(PENDING)
 
   cashierId Int
   cashier   User @relation(fields: [cashierId], references: [id])
@@ -83,11 +82,11 @@ enum ReservationStatus {
 }
 
 model Transaction {
-  id             Int               @id @default(autoincrement())
-  customerName   String
-  totalPrice     Int
-  paymentMethod  PaymentMethod
-  status         TransactionStatus @default(PAID)
+  id            Int               @id @default(autoincrement())
+  customerName  String
+  totalPrice    Int
+  paymentMethod PaymentMethod
+  status        TransactionStatus @default(PAID)
 
   cashierId Int
   cashier   User @relation(fields: [cashierId], references: [id])
