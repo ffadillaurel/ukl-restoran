@@ -13,8 +13,8 @@ export declare class CategoryController {
             description: string | null;
             price: number;
             stock: number;
-            categoryId: number;
             image: string | null;
+            categoryId: number;
         }[];
     } & {
         id: number;
@@ -31,8 +31,8 @@ export declare class CategoryController {
             description: string | null;
             price: number;
             stock: number;
-            categoryId: number;
             image: string | null;
+            categoryId: number;
         }[];
     } & {
         id: number;

@@ -11,15 +11,15 @@ export declare class TransactionDetailController {
             description: string | null;
             price: number;
             stock: number;
-            categoryId: number;
             image: string | null;
+            categoryId: number;
         };
     } & {
         id: number;
         createdAt: Date;
+        transactionId: number;
+        menuId: number;
         quantity: number;
         subtotal: number;
-        menuId: number;
-        transactionId: number;
     })[]>;
 }

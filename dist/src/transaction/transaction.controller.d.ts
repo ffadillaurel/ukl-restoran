@@ -13,16 +13,16 @@ export declare class TransactionController {
                 description: string | null;
                 price: number;
                 stock: number;
-                categoryId: number;
                 image: string | null;
+                categoryId: number;
             };
         } & {
             id: number;
             createdAt: Date;
+            transactionId: number;
+            menuId: number;
             quantity: number;
             subtotal: number;
-            menuId: number;
-            transactionId: number;
         })[];
         cashier: {
             id: number;
@@ -48,16 +48,16 @@ export declare class TransactionController {
                 description: string | null;
                 price: number;
                 stock: number;
-                categoryId: number;
                 image: string | null;
+                categoryId: number;
             };
         } & {
             id: number;
             createdAt: Date;
+            transactionId: number;
+            menuId: number;
             quantity: number;
             subtotal: number;
-            menuId: number;
-            transactionId: number;
         })[];
         cashier: {
             id: number;
@@ -83,16 +83,16 @@ export declare class TransactionController {
                 description: string | null;
                 price: number;
                 stock: number;
-                categoryId: number;
                 image: string | null;
+                categoryId: number;
             };
         } & {
             id: number;
             createdAt: Date;
+            transactionId: number;
+            menuId: number;
             quantity: number;
             subtotal: number;
-            menuId: number;
-            transactionId: number;
         })[];
         cashier: {
             id: number;

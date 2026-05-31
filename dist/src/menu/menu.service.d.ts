@@ -19,8 +19,8 @@ export declare class MenuService {
         description: string | null;
         price: number;
         stock: number;
-        categoryId: number;
         image: string | null;
+        categoryId: number;
     }>;
     findAll(): Promise<({
         category: {
@@ -37,8 +37,8 @@ export declare class MenuService {
         description: string | null;
         price: number;
         stock: number;
-        categoryId: number;
         image: string | null;
+        categoryId: number;
     })[]>;
     findOne(id: number): Promise<{
         category: {
@@ -55,8 +55,8 @@ export declare class MenuService {
         description: string | null;
         price: number;
         stock: number;
-        categoryId: number;
         image: string | null;
+        categoryId: number;
     }>;
     search(name: string): Promise<({
         category: {
@@ -73,8 +73,8 @@ export declare class MenuService {
         description: string | null;
         price: number;
         stock: number;
-        categoryId: number;
         image: string | null;
+        categoryId: number;
     })[]>;
     update(id: number, dto: UpdateMenuDto, imageUrl?: string | null): Promise<{
         category: {
@@ -91,8 +91,8 @@ export declare class MenuService {
         description: string | null;
         price: number;
         stock: number;
-        categoryId: number;
         image: string | null;
+        categoryId: number;
     }>;
     remove(id: number): Promise<{
         message: string;
