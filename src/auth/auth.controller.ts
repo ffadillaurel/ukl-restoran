@@ -12,10 +12,10 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('register')
-  @ApiBearerAuth()
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('ADMIN')
-  @ApiOperation({ summary: 'Register kasir baru (Admin only)' })
+  //@ApiBearerAuth()
+  //@UseGuards(JwtAuthGuard, RolesGuard)
+  //@Roles('ADMIN')
+  //@ApiOperation({ summary: 'Register kasir baru (Admin only)' })
   register(@Body() dto: RegisterDto) {
     return this.authService.register(dto);
   }
