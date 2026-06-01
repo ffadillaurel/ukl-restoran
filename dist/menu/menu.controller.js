@@ -14,9 +14,6 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MenuController = void 0;
 const common_1 = require("@nestjs/common");
-const platform_express_1 = require("@nestjs/platform-express");
-const multer_1 = require("multer");
-const path_1 = require("path");
 const menu_service_1 = require("./menu.service");
 const create_menu_dto_1 = require("./dto/create-menu.dto");
 const update_menu_dto_1 = require("./dto/update-menu.dto");
@@ -24,23 +21,6 @@ const jwt_auth_guard_1 = require("../auth/guards/jwt-auth.guard");
 const roles_guard_1 = require("../auth/guards/roles.guard");
 const roles_decorator_1 = require("../auth/decorators/roles.decorator");
 const swagger_1 = require("@nestjs/swagger");
-const multerOptions = {
-    storage: (0, multer_1.diskStorage)({
-        destination: './uploads/menu',
-        filename: (req, file, cb) => {
-            const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
-            cb(null, `menu-${uniqueSuffix}${(0, path_1.extname)(file.originalname)}`);
-        },
-    }),
-    fileFilter: (req, file, cb) => {
-        const allowed = /\.(jpg|jpeg|png|webp)$/i;
-        if (!allowed.test(file.originalname)) {
-            return cb(new Error('Only image files allowed!'), false);
-        }
-        cb(null, true);
-    },
-    limits: { fileSize: 2 * 1024 * 1024 },
-};
 let MenuController = class MenuController {
     menuService;
     constructor(menuService) {
@@ -55,13 +35,11 @@ let MenuController = class MenuController {
     findOne(id) {
         return this.menuService.findOne(id);
     }
-    create(dto, file) {
-        const imageUrl = file ? `/uploads/menu/${file.filename}` : null;
-        return this.menuService.create(dto, imageUrl);
+    create(dto) {
+        return this.menuService.create(dto);
     }
-    update(id, dto, file) {
-        const imageUrl = file ? `/uploads/menu/${file.filename}` : undefined;
-        return this.menuService.update(id, dto, imageUrl);
+    update(id, dto) {
+        return this.menuService.update(id, dto);
     }
     remove(id) {
         return this.menuService.remove(id);
@@ -96,13 +74,10 @@ __decorate([
     (0, swagger_1.ApiBearerAuth)(),
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard, roles_guard_1.RolesGuard),
     (0, roles_decorator_1.Roles)('ADMIN'),
-    (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('image', multerOptions)),
     (0, swagger_1.ApiOperation)({ summary: 'Buat menu baru (Admin only)' }),
-    (0, swagger_1.ApiConsumes)('multipart/form-data'),
     __param(0, (0, common_1.Body)()),
-    __param(1, (0, common_1.UploadedFile)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_menu_dto_1.CreateMenuDto, Object]),
+    __metadata("design:paramtypes", [create_menu_dto_1.CreateMenuDto]),
     __metadata("design:returntype", void 0)
 ], MenuController.prototype, "create", null);
 __decorate([
@@ -110,14 +85,11 @@ __decorate([
     (0, swagger_1.ApiBearerAuth)(),
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard, roles_guard_1.RolesGuard),
     (0, roles_decorator_1.Roles)('ADMIN'),
-    (0, common_1.UseInterceptors)((0, platform_express_1.FileInterceptor)('image', multerOptions)),
     (0, swagger_1.ApiOperation)({ summary: 'Update menu (Admin only)' }),
-    (0, swagger_1.ApiConsumes)('multipart/form-data'),
     __param(0, (0, common_1.Param)('id', common_1.ParseIntPipe)),
     __param(1, (0, common_1.Body)()),
-    __param(2, (0, common_1.UploadedFile)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, update_menu_dto_1.UpdateMenuDto, Object]),
+    __metadata("design:paramtypes", [Number, update_menu_dto_1.UpdateMenuDto]),
     __metadata("design:returntype", void 0)
 ], MenuController.prototype, "update", null);
 __decorate([

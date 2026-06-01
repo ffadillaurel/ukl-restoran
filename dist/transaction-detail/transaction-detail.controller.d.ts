@@ -9,10 +9,9 @@ export declare class TransactionDetailController {
             updatedAt: Date;
             name: string;
             description: string | null;
+            categoryId: number;
             price: number;
             stock: number;
-            categoryId: number;
-            image: string | null;
         };
     } & {
         id: number;

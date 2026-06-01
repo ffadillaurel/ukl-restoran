@@ -17,15 +17,14 @@ let MenuService = class MenuService {
     constructor(prisma) {
         this.prisma = prisma;
     }
-    async create(dto, imageUrl) {
+    async create(dto) {
         return this.prisma.menu.create({
             data: {
                 name: dto.name,
                 description: dto.description,
-                price: dto.price,
-                stock: dto.stock,
-                categoryId: dto.categoryId,
-                image: imageUrl,
+                price: Number(dto.price),
+                stock: Number(dto.stock),
+                categoryId: Number(dto.categoryId),
             },
             include: { category: true },
         });
@@ -47,14 +46,12 @@ let MenuService = class MenuService {
     async search(name) {
         return this.prisma.menu.findMany({
             where: {
-                name: {
-                    contains: name,
-                },
+                name: { contains: name },
             },
             include: { category: true },
         });
     }
-    async update(id, dto, imageUrl) {
+    async update(id, dto) {
         await this.findOne(id);
         return this.prisma.menu.update({
             where: { id },
@@ -63,7 +60,6 @@ let MenuService = class MenuService {
                 price: dto.price ? Number(dto.price) : undefined,
                 stock: dto.stock ? Number(dto.stock) : undefined,
                 categoryId: dto.categoryId ? Number(dto.categoryId) : undefined,
-                ...(imageUrl !== undefined && { image: imageUrl }),
             },
             include: { category: true },
         });

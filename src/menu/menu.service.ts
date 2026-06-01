@@ -15,7 +15,7 @@ export class MenuService {
         price: Number(dto.price),
         stock: Number(dto.stock),
         categoryId: Number(dto.categoryId),
-        image: dto.image || null,
+        //image: dto.image || null,
       },
       include: { category: true },
     });

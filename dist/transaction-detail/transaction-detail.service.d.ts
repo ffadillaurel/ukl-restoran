@@ -9,10 +9,9 @@ export declare class TransactionDetailService {
             updatedAt: Date;
             name: string;
             description: string | null;
+            categoryId: number;
             price: number;
             stock: number;
-            categoryId: number;
-            image: string | null;
         };
     } & {
         id: number;

@@ -11,10 +11,9 @@ export declare class CategoryController {
             updatedAt: Date;
             name: string;
             description: string | null;
+            categoryId: number;
             price: number;
             stock: number;
-            categoryId: number;
-            image: string | null;
         }[];
     } & {
         id: number;
@@ -29,10 +28,9 @@ export declare class CategoryController {
             updatedAt: Date;
             name: string;
             description: string | null;
+            categoryId: number;
             price: number;
             stock: number;
-            categoryId: number;
-            image: string | null;
         }[];
     } & {
         id: number;

@@ -4,95 +4,90 @@ import { UpdateMenuDto } from './dto/update-menu.dto';
 export declare class MenuService {
     private prisma;
     constructor(prisma: PrismaService);
-    create(dto: CreateMenuDto, imageUrl: string | null): Promise<{
+    create(dto: CreateMenuDto): Promise<{
         category: {
-            id: number;
             name: string;
             createdAt: Date;
             updatedAt: Date;
+            id: number;
         };
     } & {
-        id: number;
         name: string;
         description: string | null;
         price: number;
         stock: number;
-        image: string | null;
-        categoryId: number;
         createdAt: Date;
         updatedAt: Date;
+        id: number;
+        categoryId: number;
     }>;
     findAll(): Promise<({
         category: {
-            id: number;
             name: string;
             createdAt: Date;
             updatedAt: Date;
+            id: number;
         };
     } & {
-        id: number;
         name: string;
         description: string | null;
         price: number;
         stock: number;
-        image: string | null;
-        categoryId: number;
         createdAt: Date;
         updatedAt: Date;
+        id: number;
+        categoryId: number;
     })[]>;
     findOne(id: number): Promise<{
         category: {
-            id: number;
             name: string;
             createdAt: Date;
             updatedAt: Date;
+            id: number;
         };
     } & {
-        id: number;
         name: string;
         description: string | null;
         price: number;
         stock: number;
-        image: string | null;
-        categoryId: number;
         createdAt: Date;
         updatedAt: Date;
+        id: number;
+        categoryId: number;
     }>;
     search(name: string): Promise<({
         category: {
-            id: number;
             name: string;
             createdAt: Date;
             updatedAt: Date;
+            id: number;
         };
     } & {
-        id: number;
         name: string;
         description: string | null;
         price: number;
         stock: number;
-        image: string | null;
-        categoryId: number;
         createdAt: Date;
         updatedAt: Date;
+        id: number;
+        categoryId: number;
     })[]>;
-    update(id: number, dto: UpdateMenuDto, imageUrl?: string | null): Promise<{
+    update(id: number, dto: UpdateMenuDto): Promise<{
         category: {
-            id: number;
             name: string;
             createdAt: Date;
             updatedAt: Date;
+            id: number;
         };
     } & {
-        id: number;
         name: string;
         description: string | null;
         price: number;
         stock: number;
-        image: string | null;
-        categoryId: number;
         createdAt: Date;
         updatedAt: Date;
+        id: number;
+        categoryId: number;
     }>;
     remove(id: number): Promise<{
         message: string;

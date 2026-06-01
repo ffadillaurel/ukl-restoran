@@ -17,10 +17,9 @@ export declare class CategoryService {
             updatedAt: Date;
             name: string;
             description: string | null;
+            categoryId: number;
             price: number;
             stock: number;
-            categoryId: number;
-            image: string | null;
         }[];
     } & {
         id: number;
@@ -35,10 +34,9 @@ export declare class CategoryService {
             updatedAt: Date;
             name: string;
             description: string | null;
+            categoryId: number;
             price: number;
             stock: number;
-            categoryId: number;
-            image: string | null;
         }[];
     } & {
         id: number;
