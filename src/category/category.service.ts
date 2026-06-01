@@ -30,6 +30,8 @@ export class CategoryService {
 
   async remove(id: number) {
     await this.findOne(id);
+    const menuCount = await this.prisma.menu.count({ where: { categoryId: id } });
+    if (menuCount > 0) throw new ConflictException('Kategori tidak bisa dihapus karena masih memiliki menu');
     await this.prisma.category.delete({ where: { id } });
     return { message: 'Kategori berhasil dihapus' };
   }
