@@ -14,15 +14,15 @@ export declare class AuthController {
             id: number;
             username: string;
             email: string;
-            role: import("../generated/prisma/enums").UserRole;
+            role: import("generated/prisma").$Enums.UserRole;
         };
     }>;
     findAllKasir(): Promise<{
+        id: number;
         username: string;
         email: string;
-        role: import("../generated/prisma/enums").UserRole;
+        role: import("generated/prisma").$Enums.UserRole;
         createdAt: Date;
-        id: number;
     }[]>;
     deleteUser(id: number): Promise<{
         message: string;

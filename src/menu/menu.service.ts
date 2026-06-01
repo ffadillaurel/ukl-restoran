@@ -7,15 +7,15 @@ import { UpdateMenuDto } from './dto/update-menu.dto';
 export class MenuService {
   constructor(private prisma: PrismaService) {}
 
-  async create(dto: CreateMenuDto, imageUrl: string | null) {
+  async create(dto: CreateMenuDto) {
     return this.prisma.menu.create({
       data: {
         name: dto.name,
         description: dto.description,
-        price: dto.price,
-        stock: dto.stock,
-        categoryId: dto.categoryId,
-        image: imageUrl,
+        price: Number(dto.price),
+        stock: Number(dto.stock),
+        categoryId: Number(dto.categoryId),
+        image: dto.image || null,
       },
       include: { category: true },
     });
@@ -39,28 +39,25 @@ export class MenuService {
   async search(name: string) {
     return this.prisma.menu.findMany({
       where: {
-        name: {
-          contains: name,
-        },
+        name: { contains: name },
       },
       include: { category: true },
     });
   }
 
-  async update(id: number, dto: UpdateMenuDto, imageUrl?: string | null) {
-  await this.findOne(id);
-  return this.prisma.menu.update({
-    where: { id },
-    data: {
-      ...dto,
-      price: dto.price ? Number(dto.price) : undefined,
-      stock: dto.stock ? Number(dto.stock) : undefined,
-      categoryId: dto.categoryId ? Number(dto.categoryId) : undefined,
-      ...(imageUrl !== undefined && { image: imageUrl }),
-    },
-    include: { category: true },
-  });
-}
+  async update(id: number, dto: UpdateMenuDto) {
+    await this.findOne(id);
+    return this.prisma.menu.update({
+      where: { id },
+      data: {
+        ...dto,
+        price: dto.price ? Number(dto.price) : undefined,
+        stock: dto.stock ? Number(dto.stock) : undefined,
+        categoryId: dto.categoryId ? Number(dto.categoryId) : undefined,
+      },
+      include: { category: true },
+    });
+  }
 
   async remove(id: number) {
     await this.findOne(id);

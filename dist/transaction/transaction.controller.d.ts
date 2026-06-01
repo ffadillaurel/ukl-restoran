@@ -1,0 +1,114 @@
+import { TransactionService } from './transaction.service';
+import { CreateTransactionDto } from './dto/create-transaction.dto';
+export declare class TransactionController {
+    private readonly transactionService;
+    constructor(transactionService: TransactionService);
+    create(dto: CreateTransactionDto, req: any): Promise<{
+        details: ({
+            menu: {
+                id: number;
+                createdAt: Date;
+                updatedAt: Date;
+                name: string;
+                description: string | null;
+                price: number;
+                stock: number;
+                categoryId: number;
+                image: string | null;
+            };
+        } & {
+            id: number;
+            createdAt: Date;
+            quantity: number;
+            subtotal: number;
+            menuId: number;
+            transactionId: number;
+        })[];
+        cashier: {
+            id: number;
+            username: string;
+        };
+    } & {
+        id: number;
+        createdAt: Date;
+        updatedAt: Date;
+        customerName: string;
+        status: import("generated/prisma").$Enums.TransactionStatus;
+        cashierId: number;
+        totalPrice: number;
+        paymentMethod: import("generated/prisma").$Enums.PaymentMethod;
+    }>;
+    findAll(): Promise<({
+        details: ({
+            menu: {
+                id: number;
+                createdAt: Date;
+                updatedAt: Date;
+                name: string;
+                description: string | null;
+                price: number;
+                stock: number;
+                categoryId: number;
+                image: string | null;
+            };
+        } & {
+            id: number;
+            createdAt: Date;
+            quantity: number;
+            subtotal: number;
+            menuId: number;
+            transactionId: number;
+        })[];
+        cashier: {
+            id: number;
+            username: string;
+        };
+    } & {
+        id: number;
+        createdAt: Date;
+        updatedAt: Date;
+        customerName: string;
+        status: import("generated/prisma").$Enums.TransactionStatus;
+        cashierId: number;
+        totalPrice: number;
+        paymentMethod: import("generated/prisma").$Enums.PaymentMethod;
+    })[]>;
+    findOne(id: number): Promise<{
+        details: ({
+            menu: {
+                id: number;
+                createdAt: Date;
+                updatedAt: Date;
+                name: string;
+                description: string | null;
+                price: number;
+                stock: number;
+                categoryId: number;
+                image: string | null;
+            };
+        } & {
+            id: number;
+            createdAt: Date;
+            quantity: number;
+            subtotal: number;
+            menuId: number;
+            transactionId: number;
+        })[];
+        cashier: {
+            id: number;
+            username: string;
+        };
+    } & {
+        id: number;
+        createdAt: Date;
+        updatedAt: Date;
+        customerName: string;
+        status: import("generated/prisma").$Enums.TransactionStatus;
+        cashierId: number;
+        totalPrice: number;
+        paymentMethod: import("generated/prisma").$Enums.PaymentMethod;
+    }>;
+    remove(id: number): Promise<{
+        message: string;
+    }>;
+}

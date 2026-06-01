@@ -144,7 +144,6 @@ exports.Prisma.MenuScalarFieldEnum = {
   description: 'description',
   price: 'price',
   stock: 'stock',
-  image: 'image',
   categoryId: 'categoryId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -205,8 +204,7 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.MenuOrderByRelevanceFieldEnum = {
   name: 'name',
-  description: 'description',
-  image: 'image'
+  description: 'description'
 };
 
 exports.Prisma.ReservationOrderByRelevanceFieldEnum = {

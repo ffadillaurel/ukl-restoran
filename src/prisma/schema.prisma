@@ -45,7 +45,6 @@ model Menu {
   description String?
   price       Int
   stock       Int
-  image       String?
 
   categoryId Int
   category   Category @relation(fields: [categoryId], references: [id])

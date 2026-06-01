@@ -1,7 +1,6 @@
 import { PrismaService } from '../prisma/prisma.service';
 import { JwtService } from '@nestjs/jwt';
 import { RegisterDto, LoginDto } from './dto/create-auth.dto';
-import { UserRole } from '../generated/prisma/client';
 export declare class AuthService {
     private prisma;
     private jwtService;
@@ -17,15 +16,15 @@ export declare class AuthService {
             id: number;
             username: string;
             email: string;
-            role: UserRole;
+            role: import("generated/prisma").$Enums.UserRole;
         };
     }>;
     findAllKasir(): Promise<{
+        id: number;
         username: string;
         email: string;
-        role: UserRole;
+        role: import("generated/prisma").$Enums.UserRole;
         createdAt: Date;
-        id: number;
     }[]>;
     deleteUser(id: number): Promise<{
         message: string;

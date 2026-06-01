@@ -5,6 +5,5 @@ export class UpdateMenuDto {
   description?: string;
   price?: number;
   stock?: number;
-  image?: string;
   categoryId?: number;
 }
