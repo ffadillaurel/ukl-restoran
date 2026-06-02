@@ -18,6 +18,7 @@ class CreateMenuDto {
     price;
     stock;
     categoryId;
+    image;
 }
 exports.CreateMenuDto = CreateMenuDto;
 __decorate([
@@ -44,4 +45,9 @@ __decorate([
     (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
 ], CreateMenuDto.prototype, "categoryId", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsOptional)(),
+    __metadata("design:type", String)
+], CreateMenuDto.prototype, "image", void 0);
 //# sourceMappingURL=create-menu.dto.js.map

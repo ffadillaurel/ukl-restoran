@@ -12,10 +12,10 @@ export class MenuService {
       data: {
         name: dto.name,
         description: dto.description,
-        price: Number(dto.price),
-        stock: Number(dto.stock),
-        categoryId: Number(dto.categoryId),
-        //image: dto.image || null,
+        price: dto.price,
+        stock: dto.stock,
+        categoryId: dto.categoryId,
+        image: dto.image ?? null,
       },
       include: { category: true },
     });

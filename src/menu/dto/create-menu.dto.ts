@@ -1,7 +1,7 @@
 import { IsString, IsNumber, IsOptional } from 'class-validator';
 import { Type } from 'class-transformer';
 
-export class CreateMenuDto {  // ← pastikan ada kata "export"
+export class CreateMenuDto {
   @IsString()
   name: string;
 
@@ -20,4 +20,8 @@ export class CreateMenuDto {  // ← pastikan ada kata "export"
   @Type(() => Number)
   @IsNumber()
   categoryId: number;
+
+  @IsString()
+  @IsOptional()
+  image?: string;
 }

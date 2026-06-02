@@ -4,4 +4,5 @@ export declare class CreateMenuDto {
     price: number;
     stock: number;
     categoryId: number;
+    image?: string;
 }
