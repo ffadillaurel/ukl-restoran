@@ -3504,6 +3504,7 @@ export namespace Prisma {
     description: string | null
     price: number | null
     stock: number | null
+    image: string | null
     categoryId: number | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -3515,6 +3516,7 @@ export namespace Prisma {
     description: string | null
     price: number | null
     stock: number | null
+    image: string | null
     categoryId: number | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -3526,6 +3528,7 @@ export namespace Prisma {
     description: number
     price: number
     stock: number
+    image: number
     categoryId: number
     createdAt: number
     updatedAt: number
@@ -3553,6 +3556,7 @@ export namespace Prisma {
     description?: true
     price?: true
     stock?: true
+    image?: true
     categoryId?: true
     createdAt?: true
     updatedAt?: true
@@ -3564,6 +3568,7 @@ export namespace Prisma {
     description?: true
     price?: true
     stock?: true
+    image?: true
     categoryId?: true
     createdAt?: true
     updatedAt?: true
@@ -3575,6 +3580,7 @@ export namespace Prisma {
     description?: true
     price?: true
     stock?: true
+    image?: true
     categoryId?: true
     createdAt?: true
     updatedAt?: true
@@ -3673,6 +3679,7 @@ export namespace Prisma {
     description: string | null
     price: number
     stock: number
+    image: string | null
     categoryId: number
     createdAt: Date
     updatedAt: Date
@@ -3703,6 +3710,7 @@ export namespace Prisma {
     description?: boolean
     price?: boolean
     stock?: boolean
+    image?: boolean
     categoryId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -3719,12 +3727,13 @@ export namespace Prisma {
     description?: boolean
     price?: boolean
     stock?: boolean
+    image?: boolean
     categoryId?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type MenuOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "price" | "stock" | "categoryId" | "createdAt" | "updatedAt", ExtArgs["result"]["menu"]>
+  export type MenuOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "price" | "stock" | "image" | "categoryId" | "createdAt" | "updatedAt", ExtArgs["result"]["menu"]>
   export type MenuInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     category?: boolean | CategoryDefaultArgs<ExtArgs>
     details?: boolean | Menu$detailsArgs<ExtArgs>
@@ -3743,6 +3752,7 @@ export namespace Prisma {
       description: string | null
       price: number
       stock: number
+      image: string | null
       categoryId: number
       createdAt: Date
       updatedAt: Date
@@ -4122,6 +4132,7 @@ export namespace Prisma {
     readonly description: FieldRef<"Menu", 'String'>
     readonly price: FieldRef<"Menu", 'Int'>
     readonly stock: FieldRef<"Menu", 'Int'>
+    readonly image: FieldRef<"Menu", 'String'>
     readonly categoryId: FieldRef<"Menu", 'Int'>
     readonly createdAt: FieldRef<"Menu", 'DateTime'>
     readonly updatedAt: FieldRef<"Menu", 'DateTime'>
@@ -7611,6 +7622,7 @@ export namespace Prisma {
     description: 'description',
     price: 'price',
     stock: 'stock',
+    image: 'image',
     categoryId: 'categoryId',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
@@ -7695,7 +7707,8 @@ export namespace Prisma {
 
   export const MenuOrderByRelevanceFieldEnum: {
     name: 'name',
-    description: 'description'
+    description: 'description',
+    image: 'image'
   };
 
   export type MenuOrderByRelevanceFieldEnum = (typeof MenuOrderByRelevanceFieldEnum)[keyof typeof MenuOrderByRelevanceFieldEnum]
@@ -7913,6 +7926,7 @@ export namespace Prisma {
     description?: StringNullableFilter<"Menu"> | string | null
     price?: IntFilter<"Menu"> | number
     stock?: IntFilter<"Menu"> | number
+    image?: StringNullableFilter<"Menu"> | string | null
     categoryId?: IntFilter<"Menu"> | number
     createdAt?: DateTimeFilter<"Menu"> | Date | string
     updatedAt?: DateTimeFilter<"Menu"> | Date | string
@@ -7926,6 +7940,7 @@ export namespace Prisma {
     description?: SortOrderInput | SortOrder
     price?: SortOrder
     stock?: SortOrder
+    image?: SortOrderInput | SortOrder
     categoryId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -7943,6 +7958,7 @@ export namespace Prisma {
     description?: StringNullableFilter<"Menu"> | string | null
     price?: IntFilter<"Menu"> | number
     stock?: IntFilter<"Menu"> | number
+    image?: StringNullableFilter<"Menu"> | string | null
     categoryId?: IntFilter<"Menu"> | number
     createdAt?: DateTimeFilter<"Menu"> | Date | string
     updatedAt?: DateTimeFilter<"Menu"> | Date | string
@@ -7956,6 +7972,7 @@ export namespace Prisma {
     description?: SortOrderInput | SortOrder
     price?: SortOrder
     stock?: SortOrder
+    image?: SortOrderInput | SortOrder
     categoryId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -7975,6 +7992,7 @@ export namespace Prisma {
     description?: StringNullableWithAggregatesFilter<"Menu"> | string | null
     price?: IntWithAggregatesFilter<"Menu"> | number
     stock?: IntWithAggregatesFilter<"Menu"> | number
+    image?: StringNullableWithAggregatesFilter<"Menu"> | string | null
     categoryId?: IntWithAggregatesFilter<"Menu"> | number
     createdAt?: DateTimeWithAggregatesFilter<"Menu"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Menu"> | Date | string
@@ -8334,6 +8352,7 @@ export namespace Prisma {
     description?: string | null
     price: number
     stock: number
+    image?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     category: CategoryCreateNestedOneWithoutMenusInput
@@ -8346,6 +8365,7 @@ export namespace Prisma {
     description?: string | null
     price: number
     stock: number
+    image?: string | null
     categoryId: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -8357,6 +8377,7 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: IntFieldUpdateOperationsInput | number
     stock?: IntFieldUpdateOperationsInput | number
+    image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     category?: CategoryUpdateOneRequiredWithoutMenusNestedInput
@@ -8369,6 +8390,7 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: IntFieldUpdateOperationsInput | number
     stock?: IntFieldUpdateOperationsInput | number
+    image?: NullableStringFieldUpdateOperationsInput | string | null
     categoryId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8381,6 +8403,7 @@ export namespace Prisma {
     description?: string | null
     price: number
     stock: number
+    image?: string | null
     categoryId: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -8391,6 +8414,7 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: IntFieldUpdateOperationsInput | number
     stock?: IntFieldUpdateOperationsInput | number
+    image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -8401,6 +8425,7 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: IntFieldUpdateOperationsInput | number
     stock?: IntFieldUpdateOperationsInput | number
+    image?: NullableStringFieldUpdateOperationsInput | string | null
     categoryId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8886,6 +8911,7 @@ export namespace Prisma {
     description?: SortOrder
     price?: SortOrder
     stock?: SortOrder
+    image?: SortOrder
     categoryId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -8904,6 +8930,7 @@ export namespace Prisma {
     description?: SortOrder
     price?: SortOrder
     stock?: SortOrder
+    image?: SortOrder
     categoryId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -8915,6 +8942,7 @@ export namespace Prisma {
     description?: SortOrder
     price?: SortOrder
     stock?: SortOrder
+    image?: SortOrder
     categoryId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -9819,6 +9847,7 @@ export namespace Prisma {
     description?: string | null
     price: number
     stock: number
+    image?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     details?: TransactionDetailCreateNestedManyWithoutMenuInput
@@ -9830,6 +9859,7 @@ export namespace Prisma {
     description?: string | null
     price: number
     stock: number
+    image?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     details?: TransactionDetailUncheckedCreateNestedManyWithoutMenuInput
@@ -9870,6 +9900,7 @@ export namespace Prisma {
     description?: StringNullableFilter<"Menu"> | string | null
     price?: IntFilter<"Menu"> | number
     stock?: IntFilter<"Menu"> | number
+    image?: StringNullableFilter<"Menu"> | string | null
     categoryId?: IntFilter<"Menu"> | number
     createdAt?: DateTimeFilter<"Menu"> | Date | string
     updatedAt?: DateTimeFilter<"Menu"> | Date | string
@@ -10158,6 +10189,7 @@ export namespace Prisma {
     description?: string | null
     price: number
     stock: number
+    image?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     category: CategoryCreateNestedOneWithoutMenusInput
@@ -10169,6 +10201,7 @@ export namespace Prisma {
     description?: string | null
     price: number
     stock: number
+    image?: string | null
     categoryId: number
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -10227,6 +10260,7 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: IntFieldUpdateOperationsInput | number
     stock?: IntFieldUpdateOperationsInput | number
+    image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     category?: CategoryUpdateOneRequiredWithoutMenusNestedInput
@@ -10238,6 +10272,7 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: IntFieldUpdateOperationsInput | number
     stock?: IntFieldUpdateOperationsInput | number
+    image?: NullableStringFieldUpdateOperationsInput | string | null
     categoryId?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10337,6 +10372,7 @@ export namespace Prisma {
     description?: string | null
     price: number
     stock: number
+    image?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -10346,6 +10382,7 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: IntFieldUpdateOperationsInput | number
     stock?: IntFieldUpdateOperationsInput | number
+    image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     details?: TransactionDetailUpdateManyWithoutMenuNestedInput
@@ -10357,6 +10394,7 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: IntFieldUpdateOperationsInput | number
     stock?: IntFieldUpdateOperationsInput | number
+    image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     details?: TransactionDetailUncheckedUpdateManyWithoutMenuNestedInput
@@ -10368,6 +10406,7 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: IntFieldUpdateOperationsInput | number
     stock?: IntFieldUpdateOperationsInput | number
+    image?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
