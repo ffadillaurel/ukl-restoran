@@ -6,88 +6,88 @@ export declare class MenuService {
     constructor(prisma: PrismaService);
     create(dto: CreateMenuDto): Promise<{
         category: {
-            name: string;
+            id: number;
             createdAt: Date;
             updatedAt: Date;
-            id: number;
+            name: string;
         };
     } & {
-        name: string;
-        description: string | null;
-        price: number;
-        stock: number;
+        id: number;
         createdAt: Date;
         updatedAt: Date;
-        id: number;
+        name: string;
+        description: string | null;
         categoryId: number;
+        price: number;
+        stock: number;
     }>;
     findAll(): Promise<({
         category: {
-            name: string;
+            id: number;
             createdAt: Date;
             updatedAt: Date;
-            id: number;
+            name: string;
         };
     } & {
-        name: string;
-        description: string | null;
-        price: number;
-        stock: number;
+        id: number;
         createdAt: Date;
         updatedAt: Date;
-        id: number;
+        name: string;
+        description: string | null;
         categoryId: number;
+        price: number;
+        stock: number;
     })[]>;
     findOne(id: number): Promise<{
         category: {
-            name: string;
+            id: number;
             createdAt: Date;
             updatedAt: Date;
-            id: number;
+            name: string;
         };
     } & {
-        name: string;
-        description: string | null;
-        price: number;
-        stock: number;
+        id: number;
         createdAt: Date;
         updatedAt: Date;
-        id: number;
+        name: string;
+        description: string | null;
         categoryId: number;
+        price: number;
+        stock: number;
     }>;
     search(name: string): Promise<({
         category: {
-            name: string;
+            id: number;
             createdAt: Date;
             updatedAt: Date;
-            id: number;
+            name: string;
         };
     } & {
-        name: string;
-        description: string | null;
-        price: number;
-        stock: number;
+        id: number;
         createdAt: Date;
         updatedAt: Date;
-        id: number;
+        name: string;
+        description: string | null;
         categoryId: number;
+        price: number;
+        stock: number;
     })[]>;
     update(id: number, dto: UpdateMenuDto): Promise<{
         category: {
-            name: string;
+            id: number;
             createdAt: Date;
             updatedAt: Date;
-            id: number;
+            name: string;
         };
     } & {
-        name: string;
-        description: string | null;
-        price: number;
-        stock: number;
+        id: number;
         createdAt: Date;
         updatedAt: Date;
-        id: number;
+        name: string;
+        description: string | null;
         categoryId: number;
+        price: number;
+        stock: number;
     }>;
     remove(id: number): Promise<{
         message: string;

@@ -10,15 +10,15 @@ export declare class ReservationService {
             username: string;
         };
     } & {
-        id: number;
-        createdAt: Date;
-        updatedAt: Date;
         customerName: string;
         phoneNumber: string;
         reservationDate: Date;
         totalGuest: number;
         tableNumber: number;
         status: import("generated/prisma").$Enums.ReservationStatus;
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
         cashierId: number;
     }>;
     findAll(): Promise<({
@@ -27,15 +27,15 @@ export declare class ReservationService {
             username: string;
         };
     } & {
-        id: number;
-        createdAt: Date;
-        updatedAt: Date;
         customerName: string;
         phoneNumber: string;
         reservationDate: Date;
         totalGuest: number;
         tableNumber: number;
         status: import("generated/prisma").$Enums.ReservationStatus;
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
         cashierId: number;
     })[]>;
     findOne(id: number): Promise<{
@@ -44,15 +44,15 @@ export declare class ReservationService {
             username: string;
         };
     } & {
-        id: number;
-        createdAt: Date;
-        updatedAt: Date;
         customerName: string;
         phoneNumber: string;
         reservationDate: Date;
         totalGuest: number;
         tableNumber: number;
         status: import("generated/prisma").$Enums.ReservationStatus;
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
         cashierId: number;
     }>;
     findByName(name: string): Promise<({
@@ -61,15 +61,15 @@ export declare class ReservationService {
             username: string;
         };
     } & {
-        id: number;
-        createdAt: Date;
-        updatedAt: Date;
         customerName: string;
         phoneNumber: string;
         reservationDate: Date;
         totalGuest: number;
         tableNumber: number;
         status: import("generated/prisma").$Enums.ReservationStatus;
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
         cashierId: number;
     })[]>;
     findByDate(date: string): Promise<({
@@ -78,27 +78,27 @@ export declare class ReservationService {
             username: string;
         };
     } & {
-        id: number;
-        createdAt: Date;
-        updatedAt: Date;
         customerName: string;
         phoneNumber: string;
         reservationDate: Date;
         totalGuest: number;
         tableNumber: number;
         status: import("generated/prisma").$Enums.ReservationStatus;
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
         cashierId: number;
     })[]>;
     update(id: number, dto: UpdateReservationDto): Promise<{
-        id: number;
-        createdAt: Date;
-        updatedAt: Date;
         customerName: string;
         phoneNumber: string;
         reservationDate: Date;
         totalGuest: number;
         tableNumber: number;
         status: import("generated/prisma").$Enums.ReservationStatus;
+        createdAt: Date;
+        updatedAt: Date;
+        id: number;
         cashierId: number;
     }>;
     remove(id: number): Promise<{
